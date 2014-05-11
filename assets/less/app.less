@@ -1,0 +1,298 @@
+/*!
+ * Roots 6.5.2
+ */
+ @import "../Font-Awesome/less/font-awesome.less";
+ @import "bootstrap/bootstrap.less";
+ @import "jquery.fancybox.less";
+ @import "serge-header.less";
+ @import "serge-sidebar.less";
+ @import "serge-footer.less";
+ @import "serge-store.less";
+ @import "serge-blog.less";
+ @import "serge-home.less";
+
+/* ==========================================================================
+*   Base
+*   ========================================================================== */
+
+body { 
+  background-color: @gray-lighter;
+  .container{
+    background-color: #fff;
+  }
+  .wrap{
+    padding-bottom: 20px;
+  }
+  img{
+    max-width: 100%;
+    height:auto;
+  }
+}
+.img-container img{
+  width:100%;
+  height:auto;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 35px;
+  height: 0;
+  overflow: hidden;
+  iframe {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+/* ==========================================================================
+*   Header
+*   ========================================================================== */
+
+.banner { }
+
+
+
+/* ==========================================================================
+*   Content
+*   ========================================================================== */
+
+.content {
+  p {
+    text-align: justify;
+  }
+}
+.borderless{
+  td {
+    border-style: none!important;
+  }
+}
+.wp-caption {
+  max-width: 100% !important;
+  width: auto !important;
+}
+
+
+/* ==========================================================================
+*   Primary Content
+*   ========================================================================== */
+
+.main { 
+  @media (max-width: @screen-sm-min) {
+   img[class^="wp-image-"]{
+    width:100%;
+    height:auto;
+  }
+}
+.alignright{
+ margin-left: @grid-gutter-width;
+}
+.alignleft{
+ margin-right: @grid-gutter-width;
+}
+      //responsive youtube vids
+      .embed-youtube, .entry-content-asset{
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 30px; 
+        height: 0; 
+        overflow: hidden;
+        iframe{
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      article .entry-content-asset{
+        margin-bottom: 20px;
+      }
+    }
+
+    /* Gallery Shortcode */
+    .gallery-row { padding: 15px 0; }
+
+    .post-header{
+      padding:18px 0;
+    }
+    //post meta
+    .spotify-meta a {
+      color:#81b71a;
+    }
+    h3 label{
+      font-weight: normal;
+    }
+/* ==========================================================================
+*   Blog Grid
+*  ========================================================================== */
+
+.bloggrid-box {
+  text-align: center;
+  margin-top: @padding-large-vertical;
+  h3 {
+    font-size: 22px;
+  }
+  a {
+    color: @text-color;
+  }
+  .meta {
+    text-transform: uppercase;
+    font-family: @headings-font-family;
+    color: @gray-light;
+    font-size: ceil(@font-size-base * .63);
+    line-height: @font-size-base;
+    padding-top: @padding-large-vertical;
+    letter-spacing: .2em;
+    text-align: center;
+  }
+  .thumb-link{
+    overflow: hidden;
+    display: block;
+  }
+  img {
+    transition: all 450ms ease-in-out;
+    &:hover{
+      .scale(1.1, 1.1);
+    }
+  }
+  .excerpt {
+    color: @gray;
+    font-size: @font-size-small;
+  }
+}
+
+/* ==========================================================================
+*   Sidebar
+*  ========================================================================== */
+
+.sidebar {
+  li{
+    border-top: 1px @gray-lighter solid;
+  }
+  li:first-child {
+    border-top-style: none;
+  }
+}
+
+
+
+/* ==========================================================================
+*   Posts
+*   ========================================================================== */
+
+.hentry header { }
+.hentry time { }
+.hentry .byline { }
+.hentry .entry-content { }
+.hentry footer { }
+
+
+
+/* ==========================================================================
+*   Footer
+*   ========================================================================== */
+
+.content-info { }
+
+
+
+/* ==========================================================================
+*   WordPress Generated Classes
+*   See: http://codex.wordpress.org/CSS#WordPress_Generated_Classes
+*   ========================================================================== */
+
+.aligncenter { display: block; margin: 0 auto; }
+.alignleft { float: left; }
+.alignright { float: right; }
+figure.alignnone { margin-left: 0; margin-right: 0; }
+
+
+
+/* ==========================================================================
+*   Media Queries
+*   ========================================================================== */
+
+@media (min-width: @screen-sm-min) { }
+
+@media (min-width: @screen-md-min) { }
+
+@media (min-width: @screen-lg-min) { }
+
+/* ==========================================================================
+*   Social Media
+*   ========================================================================== */
+
+.twitter-share-button {
+  vertical-align: top;
+}
+.fb_iframe_widget{
+  vertical-align: top;
+  margin-right: 30px;
+}
+
+/* ==========================================================================
+*   Who Wears Serge/Gallery Page
+*   ========================================================================== */
+
+#masonary-container{
+
+  @masonary-col-width-md: 32%;
+  @masonary-col-width-sm: 48%;
+  @gutter-width-md: (100% - (3*@masonary-col-width-md)) / 2 - .001%;
+  @gutter-width-sm: (100% - (2*@masonary-col-width-sm)) - .001%;
+
+  .img-container{
+    width:100%;
+    padding-bottom: @gutter-width-md;
+    a{
+     display: block;
+   }
+
+ }
+ @media (min-width: @screen-sm-min) {    
+  .gutter-sizer{
+    width:  @gutter-width-sm;
+  }
+  .img-container{
+    width:@masonary-col-width-sm;
+  }
+}
+@media (min-width: @screen-md-min) {    
+  .gutter-sizer{
+    width:  @gutter-width-md;
+  }
+  .img-container{
+    width:@masonary-col-width-md;
+  }
+}
+.whowears-link {
+  color: #000;
+  text-transform: uppercase;
+  font-family: @headings-font-family;
+  padding-top:8px;
+}
+
+}
+
+/* ==========================================================================
+*   Team Page
+*   ========================================================================== */
+#team-members {
+  .team-container{
+    border: 1px solid #aaa;
+    padding:20px;
+    box-shadow: 0px 0px 12px #aaa;
+    .team-description{
+      height: 140px;
+      font-size: 80%;
+    }
+    img{
+      box-shadow: 0 0 3px #999;
+    }
+  }
+}

@@ -1,0 +1,118 @@
+#masthead-link{
+	display:block;
+	text-align: center;
+	margin: 0 auto;
+	img{
+		width:100%;
+		max-width: 565px;
+		height: auto;
+	}
+}
+.menu-border{
+	border-bottom: 8px @navbar-default-border solid;
+}
+.navbar > .container {
+	.menu-border;
+	li a{
+		text-transform: uppercase;
+		font-family: @headings-font-family;
+	}
+	@media (min-width: @screen-xs-min) {
+		nav > ul.navbar-nav > li{
+			> a{
+				padding-left: 0;
+				padding-right:0;
+			}
+
+		}
+	}
+}
+div.wrap{
+	padding-top: 70px;
+}
+header.navbar {
+	position:absolute;
+	z-index:10;
+	width: 100%;
+	&.affix {
+		position: fixed;
+		top: 0;
+		nav{
+			box-shadow: 0 5px 5px -5px @gray;
+		}
+		
+	}
+}
+@media (min-width: @screen-sm-min) {
+	.navbar > .container {
+		border-style:none;
+		.navbar-nav{
+			.menu-border;
+			//display: table;
+			width: 100%;
+			text-align: justify;
+			//table-layout: auto;
+			height:53px;
+			> li {
+				//display: table-cell;
+				display: inline-block;
+				float: none;
+				text-align: center;
+				li{
+					text-align: left;
+				}
+			}
+			&:before, &:after{
+				display: none;
+			}
+			&:after{
+				display: inline-block;
+				content:'';
+				width:100%;
+			}
+		}
+	}
+}
+
+/***************** Social Media Buttons *****************/
+@fb-blue: #3b5998;
+@tw-blue: #00aced;
+@yt-red:  #bb0000;
+@pi-red:  #cb2027;
+@tb-turq: #32506d;
+@sp-green:#7AB800;
+@in-blue: #3f729b;
+
+.socmed {
+	i{
+		color:@text-color;
+		.transition(color 380ms ease);
+		font-size: 19px;
+		margin-right: 5px;
+	}
+
+	.icon-facebook:hover{
+		color:@fb-blue;
+	}
+	.icon-twitter:hover{
+		color:@tw-blue;
+	}
+	.icon-tumblr:hover{
+		color:@tb-turq;
+	}
+	.icon-youtube:hover{
+		color:@yt-red;
+	}
+	.icon-spotify:hover{
+		color:@sp-green;
+	}
+	.icon-pinterest:hover{
+		color:@pi-red;
+	}
+	.icon-instagram:hover {
+		color: @in-blue;
+	}
+}
+
+
+

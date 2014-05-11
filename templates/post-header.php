@@ -1,0 +1,1 @@
+<div class="text-right text-muted post-header"><time class="published" datetime="<?php echo get_the_time('c'); ?>"><?php echo get_the_date(); ?></time> | <i class="fa fa-comment"></i> <?php comments_popup_link('0', '1', '%'); ?></div>
