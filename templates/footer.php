@@ -18,7 +18,6 @@ if (!$woocommerce) global $woocommerce;
 <script>
 $(function(){
   // use the custom woocommerce cookie to determine if the empty cart icon should show in the header or the full cart icon should show
-// *NOTE: I'm using the jQuery cookie plugin for convenience https://github.com/carhartl/jquery-cookie
 var cartCount = $.cookie("woocommerce_cart_count");
 var cartTotal = $.cookie("woocommerce_cart_total");
 console.log(cartCount);
@@ -35,6 +34,26 @@ if (typeof(cartCount) !== "undefined" && parseInt(cartCount, 10) > 0) {
   $('#micro-cart .cart_link').attr('href', shop_url);
 }
 $('#micro-cart .cart_amount').html(cartTotal);
+
+<?php if ( is_front_page() ) : ?>
+    //autoload the video, only if on a decent-sized screen
+    if (!isMobile()){
+     $.fancybox({
+       width: '90%',
+       height: '90%',
+       autoScale: true,
+       transitionIn: 'fade',
+       transitionOut: 'fade',
+       type: 'iframe',
+       padding: 0,
+       title: false,
+       helpers: {
+         media: true
+       },
+       href: 'https://player.vimeo.com/video/95504891?autoplay=1&amp;badge=0&amp;byline=0&amp;title=0'
+     });
+    }
+<?php endif; ?>
 });
 
 </script>

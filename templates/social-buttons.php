@@ -1,5 +1,5 @@
 <div class="social-buttons">
-<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="lizziecolman" >Tweet</a>
+<a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="sergedenimes" >Tweet</a>
 
 
 <div class="fb-like" data-href="<?php the_permalink(); ?>" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>

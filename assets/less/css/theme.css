@@ -1,5 +1,20 @@
+.img-container img {
+  width: 100%;
+  height: auto;
+}
 .top-buffer {
   margin-top: 20px;
+}
+.img-zoom {
+  overflow: hidden;
+}
+.img-zoom img {
+  transition: all 450ms ease-in-out;
+}
+.img-zoom img:hover {
+  -webkit-transform: scale(1.1, 1.1);
+  -ms-transform: scale(1.1, 1.1);
+  transform: scale(1.1, 1.1);
 }
 .btn-default,
 .btn-primary,

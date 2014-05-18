@@ -28,10 +28,7 @@ body {
     height:auto;
   }
 }
-.img-container img{
-  width:100%;
-  height:auto;
-}
+
 
 .video-container {
   position: relative;
@@ -118,7 +115,7 @@ body {
     .gallery-row { padding: 15px 0; }
 
     .post-header{
-      padding:18px 0;
+      padding:0 0 18px 0;
     }
     //post meta
     .spotify-meta a {
@@ -151,34 +148,14 @@ body {
     text-align: center;
   }
   .thumb-link{
-    overflow: hidden;
     display: block;
-  }
-  img {
-    transition: all 450ms ease-in-out;
-    &:hover{
-      .scale(1.1, 1.1);
-    }
+    .img-zoom;
   }
   .excerpt {
     color: @gray;
     font-size: @font-size-small;
   }
 }
-
-/* ==========================================================================
-*   Sidebar
-*  ========================================================================== */
-
-.sidebar {
-  li{
-    border-top: 1px @gray-lighter solid;
-  }
-  li:first-child {
-    border-top-style: none;
-  }
-}
-
 
 
 /* ==========================================================================
@@ -251,6 +228,7 @@ figure.alignnone { margin-left: 0; margin-right: 0; }
     padding-bottom: @gutter-width-md;
     a{
      display: block;
+      .img-zoom;
    }
 
  }

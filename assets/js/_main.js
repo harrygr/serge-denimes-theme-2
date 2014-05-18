@@ -14,7 +14,7 @@
  * remove or comment out: add_theme_support('jquery-cdn');
  * ======================================================================== */
 
-(function($) {
+ (function($) {
 
   // Use this variable to set up the common and page specific functions. If you 
   // rename this variable, you will also need to rename the namespace below.
@@ -70,8 +70,8 @@
             }
           });
         }); // End readiness
-      }
-    },
+}
+},
     // Home page
     home: {
       init: function() {
@@ -113,3 +113,11 @@
   $(document).ready(UTIL.loadEvents);
 
 })(jQuery); // Fully reference jQuery after this point.
+
+function isMobile() {
+ if(window.innerWidth <= 600) {
+   return true;
+ } else {
+   return false;
+ }
+}

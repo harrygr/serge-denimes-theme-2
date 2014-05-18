@@ -28,7 +28,7 @@
 						echo '<p>this post does not have a featured image</p>';
 					} ?>
 				</a>
-				<p class="meta"><span class="cats"><?php the_category(', ') ?></span> | <time class="published" datetime="<?php echo get_the_time('c'); ?>"><?php echo get_the_date(); ?></time></p>
+				<p class="meta"><span class="cats"><?php the_category(', ') ?></span> / <time class="published" datetime="<?php echo get_the_time('c'); ?>"><?php echo get_the_date(); ?></time></p>
 				<a href="<?php the_permalink(); ?>" title="Go to <?php the_title( ); ?>">
 					<h3><?php the_title(); ?></h3>
 				</a>

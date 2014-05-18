@@ -36,12 +36,17 @@
 	bottom:0;
 	line-height: 150%;
 	max-width: 85%;
-opacity:0.5;
-.transition(opacity 400ms ease);
+	opacity:0.5;
+	.transition(opacity 400ms ease);
 }
-.home-second-row .home-tile-title{
-	font-size: 123%;
-}
+.home-second-row{
+	.home-tile-title{
+		font-size: 123%;
+	}
+	&.img-container img {
+		height:100%;
+	}
+} 
 .home-tile:hover .home-tile-title{
 	opacity: 1;
 }

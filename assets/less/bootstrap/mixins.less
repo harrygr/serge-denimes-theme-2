@@ -1,3 +1,8 @@
+.img-container img{
+  width:100%;
+  height:auto;
+}
+
 //
 // Mixins
 // --------------------------------------------------
@@ -496,8 +501,8 @@
 // -------------------------
 // Easily pump out default styles, as well as :hover, :focus, :active,
 // and disabled options for all buttons
-  @push-button-depth: 1px;
-  @shadow-height: 3px;
+@push-button-depth: 1px;
+@shadow-height: 3px;
 
 .button-variant(@color; @background; @border) {
 
@@ -941,5 +946,14 @@
   }
 }
 
-
+// image zoom on hover - apply to image container
+.img-zoom {
+  overflow: hidden;
+  img {
+    transition: all 450ms ease-in-out;
+    &:hover{
+      .scale(1.1, 1.1);
+    }
+  }
+}
 

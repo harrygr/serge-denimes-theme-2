@@ -31,7 +31,7 @@ $woocommerce_loop['columns'] = $columns;
 
 if ( $products->have_posts() ) : ?>
 
-	<div class="related products col-sm-6">
+	<div class="related products col-sm-8">
 
 		<h2><?php _e( 'Related Products', 'woocommerce' ); ?></h2>
 

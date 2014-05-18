@@ -8,6 +8,19 @@
 		padding:0;
 		li{
 			padding: 5px 0;
+			border-top: 1px @gray-lighter solid;
+			&:first-child {
+				border-top-style: none;
+			}
+			ul.children {
+				border-top: 1px @gray-lighter solid;
+				margin: 5px 0 -5px;
+				li {
+				padding-left: 18px;
+
+			}
+		}
 		}	
+
 	}
 }

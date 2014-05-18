@@ -50,7 +50,6 @@ add_action('init', 'update_cart_total_cookie');
 
 //NUMBER OF PRODUCTS TO DISPLAY ON SHOP PAGE
 add_filter('loop_shop_per_page', 'wg_view_all_products');
-
 function wg_view_all_products(){
 	if($_GET['view'] === 'all'){
 		return '9999';
