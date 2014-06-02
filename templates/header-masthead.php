@@ -6,7 +6,7 @@
 			<a title="Serge DeNimes Twitter" href="http://www.twitter.com/sergedenimes"><i class="icon-twitter fa fa-twitter"></i></a>
 			<a title="So Serge Tumblr" href="http://soserge.com/"><i class="icon-tumblr fa fa-tumblr"></i></a>
 			<a title="Serge DeNimes YouTube Channel" href="http://www.youtube.com/sdnimes"><i class="icon-youtube fa fa-youtube"></i></a>
-			<!-- 			<a title="Serge Songs of the Week on Spotify" href="http://open.spotify.com/user/1163287097/playlist/1ztfJ8Z9278J7AVPtRSMg5"><i class="icon-spotify fa fa-spotify"></i></a> -->
+			<a title="Serge Songs of the Week on Spotify" href="http://open.spotify.com/user/1163287097/playlist/1ztfJ8Z9278J7AVPtRSMg5"><i class="icon-spotify fa fa-spotify"></i></a>
 			<a title="Serge DeNimes Pinterest" href="http://pinterest.com/sergedenimes/"><i class="icon-pinterest fa fa-pinterest"></i></a>
 			<a title="Serge DeNimes Instagram" href="http://instagram.com/sergedenimes"><i class="icon-instagram fa fa-instagram"></i></a>
 
