@@ -6975,6 +6975,15 @@ a.out-of-stock:hover {
 .product table.variations td .reset_variations {
   margin-left: 8px;
 }
+.price ins {
+  text-decoration: none;
+}
+.price ins .amount {
+  color: #c12e2a;
+}
+.cat-item-131 a {
+  color: #c12e2a;
+}
 .quantity {
   display: inline-block;
   position: relative;

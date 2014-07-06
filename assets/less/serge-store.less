@@ -44,11 +44,12 @@
 		font-size: @font-size-base * 1.3;
 		color: @text-color;
 	}
+
 	.catalog-info {
 		height: 70px;
 		.amount {
-		font-size: @font-size-base;
-	}
+			font-size: @font-size-base;
+		}
 	}
 
 	img{
@@ -64,10 +65,19 @@
 			}
 		}
 	}
-	
-
-	
 }
+// Sale price
+.price ins {
+	text-decoration: none;
+	.amount {
+		color: @brand-danger;
+	}
+}
+// Sale Category
+.cat-item-131 a{
+	color: @brand-danger;
+}
+
 // The quantity buttons
 .quantity {
 	display: inline-block;
