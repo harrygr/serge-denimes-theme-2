@@ -60,8 +60,8 @@ function wg_view_all_products(){
 
 // Secret Store
 
-add_action( 'pre_get_posts', 'serge_exclude_cat' );
-add_filter( 'woocommerce_product_categories_widget_args', 'serge_exclude_product_cat_widget' );
+//add_action( 'pre_get_posts', 'serge_exclude_cat' );
+//add_filter( 'woocommerce_product_categories_widget_args', 'serge_exclude_product_cat_widget' );
 
 // Hide from the main store page
 function serge_exclude_cat( $q ) 
