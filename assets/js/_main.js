@@ -27,6 +27,15 @@
         // Sort the affix menu bar
         $(function() {
 
+          function stockColours()
+          {
+          //change classes based on stock label
+          if ( $('p.stock:contains("in stock")') )
+          {
+            $('p.stock').addClass('text-success');
+          }
+        }
+
           //activate fancybox for image links
           $('.zoom').fancybox({
             padding: 0
@@ -69,6 +78,13 @@
               media: true
             }
           });
+
+          stockColours();
+          $('.variations select').change(function(){
+            //alert('you changed!');
+            stockColours();
+          });
+
         }); // End readiness
 }
 },
@@ -114,10 +130,12 @@
 
 })(jQuery); // Fully reference jQuery after this point.
 
-function isMobile() {
+function isMobile() 
+{
  if(window.innerWidth <= 600) {
    return true;
  } else {
    return false;
  }
 }
+
