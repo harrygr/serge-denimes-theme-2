@@ -6957,6 +6957,9 @@ ul.cc li.diners {
 ul.cc li.is_card {
   opacity: 1;
 }
+.stripe-form .payment-errors {
+  color: #c12e2a;
+}
 .product h3 {
   font-family: Lato, Helvetica, Arial, sans-serif;
   line-height: 1.428571429;

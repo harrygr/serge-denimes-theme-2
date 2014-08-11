@@ -6,16 +6,16 @@
  * License : http://seanvoss.com/woostriper/legal
  */
 ?>
-<div class="row">
+<div class="row stripe-form">
   <div class="col-md-8">
 
     <div id="stripe_pub_key" class="hidden" style="display:none" data-publishablekey="<?=$this->publishable_key ?>"> </div>
 
     <div class="row">
       <div class="form-row col-md-8 form-group">
-        <span class='payment-errors required'></span>
         <label>Card Number <span class="required">*</span></label>
         <input id="checkout_card_number" class="input-text form-control" type="text" size="19" maxlength="19" data-stripe="number" />
+        <span class='payment-errors required'></span>
       </div>
       <div class="col-md-4">
         <ul class="cc">
