@@ -33,52 +33,6 @@ function optionsframework_options() {
 		'vimeo'		=> 'Vimeo',
 		);
 
-	// Test data
-	$test_array = array(
-		'one' => __('One', 'options_check'),
-		'two' => __('Two', 'options_check'),
-		'three' => __('Three', 'options_check'),
-		'four' => __('Four', 'options_check'),
-		'five' => __('Five', 'options_check')
-		);
-
-	// Multicheck Array
-	$multicheck_array = array(
-		'one' => __('French Toast', 'options_check'),
-		'two' => __('Pancake', 'options_check'),
-		'three' => __('Omelette', 'options_check'),
-		'four' => __('Crepe', 'options_check'),
-		'five' => __('Waffle', 'options_check')
-		);
-
-	// Multicheck Defaults
-	$multicheck_defaults = array(
-		'one' => '1',
-		'five' => '1'
-		);
-
-	// Background Defaults
-	$background_defaults = array(
-		'color' => '',
-		'image' => '',
-		'repeat' => 'repeat',
-		'position' => 'top center',
-		'attachment'=>'scroll' );
-
-	// Typography Defaults
-	$typography_defaults = array(
-		'size' => '15px',
-		'face' => 'georgia',
-		'style' => 'bold',
-		'color' => '#bada55' );
-
-	// Typography Options
-	$typography_options = array(
-		'sizes' => array( '6','12','14','16','20' ),
-		'faces' => array( 'Helvetica Neue' => 'Helvetica Neue','Arial' => 'Arial' ),
-		'styles' => array( 'normal' => 'Normal','bold' => 'Bold' ),
-		'color' => false
-		);
 
 	// Pull all the categories into an array
 	$options_categories = array();
@@ -214,12 +168,12 @@ function optionsframework_options() {
 		'std' => '',
 		'type' => 'text');
 // Third row full-span image
-		$options[] = array(
+	$options[] = array(
 		'name' => '',
 		'desc' => '<h3>Third Row Tile</h3>',
 		'type' => 'info');
 
-		$options[] = array(
+	$options[] = array(
 		'name' => __('Tile 3 Image', 'options_check'),
 		'desc' => __('The bottom row image', 'options_check'),
 		'id' => 'tile_3_image',
@@ -254,19 +208,48 @@ function optionsframework_options() {
 
 	$options[] = array(
 		'name' => __('Video Source', 'options_check'),
-		'desc' => __('Where is the video hosted', 'options_check'),
 		'id' => 'video_source',
+		'std' => 'youtube',
+		'type' => 'radio',
+		'options' => $video_sources);
+
+	//Video
+
+	$options[] = array(
+		'name' => '',
+		'desc' => '<h3>Video Popup</h3>',
+		'type' => 'info');
+
+	$options[] = [
+	'desc' => 'Enable Popup Video',
+	'name' => 'Show a popup video on the homepage',
+	'id'   => 'enable_popup_video',
+	'type' => 'checkbox',
+	'std'  => false,
+	];
+
+	$options[] = array(
+		'name' => __('Popup Video ID', 'options_check'),
+		'desc' => __('Just enter the video ID here', 'options_check'),
+		'id' => 'popup_video_id',
+		'std' => '',
+		'class' => 'mini',
+		'type' => 'text');
+
+	$options[] = array(
+		'name' => __('Video Source', 'options_check'),
+		'id' => 'popup_video_source',
 		'std' => 'youtube',
 		'type' => 'radio',
 		'options' => $video_sources);
 
 				//------------------------//
 
-				$options[] = array(
+	$options[] = array(
 		'name' => __('Blog Settings', 'options_check'),
 		'type' => 'heading');
 
-					$options[] = array(
+	$options[] = array(
 		'name' => __('Blog Category Tiles', 'options_check'),
 		'desc' => __('Select the categories to be shown as links on the blog page', 'options_check'),
 		'id' => 'blog_category_tiles',
@@ -277,11 +260,11 @@ function optionsframework_options() {
 
 				//------------------------//
 
-			$options[] = array(
+	$options[] = array(
 		'name' => __('Shop Settings', 'options_check'),
 		'type' => 'heading');
 
-				$wp_editor_settings = array(
+	$wp_editor_settings = array(
 		'wpautop' => true, // Default
 		'textarea_rows' => 5,
 		'tinymce' => false,
