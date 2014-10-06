@@ -11,11 +11,11 @@
 
     <div id="stripe_pub_key" class="hidden" style="display:none" data-publishablekey="<?=$this->publishable_key ?>"> </div>
 
+        <p class='payment-errors required'></p>
     <div class="row">
       <div class="form-row col-md-8 form-group">
         <label>Card Number <span class="required">*</span></label>
         <input id="checkout_card_number" class="input-text form-control" type="text" size="19" maxlength="19" data-stripe="number" />
-        <span class='payment-errors required'></span>
       </div>
       <div class="col-md-4">
         <ul class="cc">
