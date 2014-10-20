@@ -7199,6 +7199,12 @@ dl.variation dd {
   height: 63px;
   width: auto;
 }
+.nav-pills.nav-stacked li a {
+  border: 1px #999999 solid;
+}
+.nav-pills.nav-stacked li.active a {
+  border-color: #555555;
+}
 .blog-grid .post-title h2 {
   font-size: 20px;
   color: #333333;

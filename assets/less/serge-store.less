@@ -156,7 +156,6 @@ ul.cc li {
 		}
 
 // Here be the cart
-
 .cart{
 	.cart_item td{
 		vertical-align: middle;
@@ -178,11 +177,19 @@ dl.variation {
 
 
 // Cart Widget
-
 .product_list_widget {
 	.product-thumbnail img {
 		height: 63px;
 		width: auto;
 	}
+}
 
+// Nav tabs
+.nav-pills.nav-stacked li {
+	a {
+		border: 1px @gray-light solid;
+	}
+	&.active a {
+		border-color: @gray;
+	}
 }
