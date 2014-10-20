@@ -87,9 +87,9 @@ $video_source = of_get_option('video_source');
 <script>
 	var video_url = '<?php if ( "youtube" == of_get_option("popup_video_source") ) 
 	{
-		echo "https://www.youtube.com/embed/" . of_get_option("popup_video_id") . "?autoplay=1";
+		echo "//www.youtube.com/embed/" . of_get_option("popup_video_id") . "?autoplay=1";
 	} else {
-		echo "https://player.vimeo.com/video/" . of_get_option("popup_video_id")  . "?autoplay=1";
+		echo "//player.vimeo.com/video/" . of_get_option("popup_video_id")  . "?autoplay=1";
 	} ?>';
 
 	$(document).ready(function() {
