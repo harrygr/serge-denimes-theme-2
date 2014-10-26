@@ -41,6 +41,7 @@
             padding: 0
           });
 
+
           // Activate the sticky menu
           $('#header-masthead').imagesLoaded(function() {
             var offset = $('#header-masthead').height();

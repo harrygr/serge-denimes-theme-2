@@ -6920,44 +6920,32 @@ a.out-of-stock:hover {
   -webkit-box-shadow: 0 1px 4px 0 #999999;
   box-shadow: 0 1px 4px 0 #999999;
 }
-ul.cc {
+.wc-credit-card-form-card-number {
+  background-image: url('../img/credit-cards-v-1x.png');
+  background-position: 99% -999px;
+  background-repeat: no-repeat;
+}
+.wc-credit-card-form-card-number.visa {
+  background-position: 99% -149px;
+}
+.wc-credit-card-form-card-number.mastercard {
+  background-position: 99% -119px;
+}
+.wc-credit-card-form-card-number.amex {
+  background-position: 99% -88px;
+}
+.wc-credit-card-form-card-number.dinersclub {
+  background-position: 99% -57px;
+}
+.wc-credit-card-form-card-number.jcb {
+  background-position: 99% -27px;
+}
+.wc-credit-card-form-card-number.discover {
+  background-position: 99% 4px;
+}
+#striper-errorbox {
   list-style-type: none;
-  padding: 0;
-}
-@media (min-width: 920px) {
-  ul.cc {
-    padding-top: 27px;
-  }
-}
-ul.cc li {
-  height: 30px;
-  width: 46px;
-  display: inline-block;
-  opacity: 0.4;
-  background: url('../img/credit-cards-@1x.png') 0 0 no-repeat;
-}
-ul.cc li.visa {
-  background-position: 0 0;
-}
-ul.cc li.amex {
-  background-position: -50px 0;
-}
-ul.cc li.mastercard {
-  background-position: -100px 0;
-}
-ul.cc li.discover {
-  background-position: -150px 0;
-}
-ul.cc li.jcb {
-  background-position: -200px 0;
-}
-ul.cc li.diners {
-  background-position: -250px 0;
-}
-ul.cc li.is_card {
-  opacity: 1;
-}
-.stripe-form .payment-errors {
+  padding-left: 0;
   color: #c12e2a;
 }
 .product h3 {

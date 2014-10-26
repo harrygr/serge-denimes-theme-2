@@ -18,9 +18,9 @@ if (!$woocommerce) global $woocommerce;
 <script>
 $(function(){
   // use the custom woocommerce cookie to determine if the empty cart icon should show in the header or the full cart icon should show
+
 var cartCount = $.cookie("woocommerce_cart_count");
 var cartTotal = $.cookie("woocommerce_cart_total");
-console.log(cartCount);
 if ( typeof(cartTotal) === "undefined") cartTotal = "£0.00";
 
 var cart_url = "<?php echo $woocommerce->cart->get_cart_url(); ?>";
