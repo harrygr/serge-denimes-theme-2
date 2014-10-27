@@ -6948,6 +6948,14 @@ a.out-of-stock:hover {
   padding-left: 0;
   color: #c12e2a;
 }
+#ship-to-different-address label {
+  margin-top: 0;
+  margin-bottom: 0;
+  display: inline;
+}
+#ship-to-different-address input {
+  float: left;
+}
 .product h3 {
   font-family: Lato, Helvetica, Arial, sans-serif;
   line-height: 1.428571429;
