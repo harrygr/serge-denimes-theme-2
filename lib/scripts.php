@@ -29,10 +29,10 @@ function roots_scripts() {
   //The facebook script is included via a template file
 
   //Masonary - only load on the who wears page or a gallery page template
-  if ( is_page('who-wears-serge-denimes') || is_page_template('template-gallery.php') ) {
-      wp_register_script( 'masonry', get_template_directory_uri() . '/assets/js/vendor/masonry.min.js', array('jquery'));
-      wp_enqueue_script( 'masonry' );
-  }
+  // if ( is_page('who-wears-serge-denimes') || is_page_template('template-gallery.php') ) {
+  //     wp_register_script( 'masonry', get_template_directory_uri() . '/assets/js/vendor/masonry.min.js', array('jquery'));
+  //     wp_enqueue_script( 'masonry' );
+  // }
 
   // jQuery is loaded using the same method from HTML5 Boilerplate:
   // Grab Google CDN's latest jQuery with a protocol relative URL; fallback to local if offline
@@ -48,10 +48,10 @@ function roots_scripts() {
     wp_enqueue_script('comment-reply');
   }
 
-  wp_register_script('modernizr', get_template_directory_uri() . '/assets/js/vendor/modernizr-2.7.0.min.js', array(), null, false);
+  //wp_register_script('modernizr', get_template_directory_uri() . '/assets/js/vendor/modernizr-2.7.0.min.js', array(), null, false);
   wp_register_script('roots_scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', array('jquery', 'jquery-cookie'), '0fc6af96786d8f267c8686338a34cd38', true);
-  wp_register_script('fancybox', get_template_directory_uri() . '/assets/js/vendor/jquery.fancybox.js', array('jquery'), null, false);
-    wp_register_script('imagesloaded', get_template_directory_uri() . '/assets/js/vendor/imagesloaded.pkgd.min.js', array('jquery'), null, false);
+  //wp_register_script('fancybox', get_template_directory_uri() . '/assets/js/vendor/jquery.fancybox.js', array('jquery'), null, false);
+  //wp_register_script('imagesloaded', get_template_directory_uri() . '/assets/js/vendor/imagesloaded.pkgd.min.js', array('jquery'), null, false);
 
   //wp_enqueue_script('modernizr');
   wp_enqueue_script('jquery');
