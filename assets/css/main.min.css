@@ -7506,3 +7506,144 @@ figure.alignnone {
 #team-members .team-container img {
   box-shadow: 0 0 3px #999;
 }
+/* ==========================================================================
+*   WooChimp
+*   ========================================================================== */
+#woochimp_registration_form_widget table {
+  width: 100%;
+}
+#woochimp_registration_form_widget input {
+  display: block;
+  width: 100%;
+  height: 35px;
+  padding: 6px 12px;
+  font-size: 15px;
+  line-height: 1.428571429;
+  color: #555555;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  margin-bottom: 10px;
+}
+#woochimp_registration_form_widget input:focus {
+  border-color: #999999;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(153, 153, 153, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(153, 153, 153, 0.6);
+}
+#woochimp_registration_form_widget input::-moz-placeholder {
+  color: #999999;
+  opacity: 1;
+}
+#woochimp_registration_form_widget input:-ms-input-placeholder {
+  color: #999999;
+}
+#woochimp_registration_form_widget input::-webkit-input-placeholder {
+  color: #999999;
+}
+#woochimp_registration_form_widget input[disabled],
+#woochimp_registration_form_widget input[readonly],
+fieldset[disabled] #woochimp_registration_form_widget input {
+  cursor: not-allowed;
+  background-color: #eeeeee;
+  opacity: 1;
+}
+textarea#woochimp_registration_form_widget input {
+  height: auto;
+}
+#woochimp_registration_form_widget button {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px 4px 12px;
+  font-size: 15px;
+  line-height: 1.428571429;
+  border-radius: 3px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #333333;
+  background-color: #ffffff;
+  border-color: #cccccc;
+  border-bottom-style: solid;
+  border-bottom-width: 3px;
+}
+#woochimp_registration_form_widget button:focus,
+#woochimp_registration_form_widget button:active:focus,
+#woochimp_registration_form_widget button.active:focus {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+#woochimp_registration_form_widget button:hover,
+#woochimp_registration_form_widget button:focus {
+  color: #333333;
+  text-decoration: none;
+}
+#woochimp_registration_form_widget button:active,
+#woochimp_registration_form_widget button.active {
+  outline: 0;
+  background-image: none;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+#woochimp_registration_form_widget button.disabled,
+#woochimp_registration_form_widget button[disabled],
+fieldset[disabled] #woochimp_registration_form_widget button {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+#woochimp_registration_form_widget button:hover,
+#woochimp_registration_form_widget button:focus,
+#woochimp_registration_form_widget button:active,
+#woochimp_registration_form_widget button.active,
+.open .dropdown-toggle#woochimp_registration_form_widget button {
+  color: #333333;
+  background-color: #ebebeb;
+  border-color: #adadad;
+}
+#woochimp_registration_form_widget button:active,
+#woochimp_registration_form_widget button.active,
+.open .dropdown-toggle#woochimp_registration_form_widget button {
+  background-image: none;
+  margin-top: 1px;
+  border-bottom-width: 2px;
+}
+#woochimp_registration_form_widget button.disabled,
+#woochimp_registration_form_widget button[disabled],
+fieldset[disabled] #woochimp_registration_form_widget button,
+#woochimp_registration_form_widget button.disabled:hover,
+#woochimp_registration_form_widget button[disabled]:hover,
+fieldset[disabled] #woochimp_registration_form_widget button:hover,
+#woochimp_registration_form_widget button.disabled:focus,
+#woochimp_registration_form_widget button[disabled]:focus,
+fieldset[disabled] #woochimp_registration_form_widget button:focus,
+#woochimp_registration_form_widget button.disabled:active,
+#woochimp_registration_form_widget button[disabled]:active,
+fieldset[disabled] #woochimp_registration_form_widget button:active,
+#woochimp_registration_form_widget button.disabled.active,
+#woochimp_registration_form_widget button[disabled].active,
+fieldset[disabled] #woochimp_registration_form_widget button.active {
+  background-color: #ffffff;
+  border-color: #cccccc;
+}
+#woochimp_registration_form_widget button .badge {
+  color: #ffffff;
+  background-color: #333333;
+}
