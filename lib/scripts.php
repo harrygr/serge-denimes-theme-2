@@ -55,8 +55,8 @@ function roots_scripts() {
 
   //wp_enqueue_script('modernizr');
   wp_enqueue_script('jquery');
-  wp_enqueue_script('fancybox');
-  wp_enqueue_script('imagesloaded');
+  //wp_enqueue_script('fancybox');
+  //wp_enqueue_script('imagesloaded');
   wp_enqueue_script('roots_scripts');
 }
 add_action('wp_enqueue_scripts', 'roots_scripts', 100);
