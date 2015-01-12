@@ -7453,6 +7453,13 @@ figure.alignnone {
 /* ==========================================================================
 *   Who Wears Serge/Gallery Page
 *   ========================================================================== */
+#who-wears-serge-link {
+  display: block;
+}
+#who-wears-serge-link img {
+  max-width: none;
+  width: initial;
+}
 #masonary-container .img-container {
   width: 100%;
   padding-bottom: 1.999%;

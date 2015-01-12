@@ -93,6 +93,11 @@
     home: {
       init: function() {
         // JavaScript to be fired on the home page
+        var $wwsLink = $('#who-wears-serge-link');
+        $wwsLink.imagesLoaded(function(){
+          $wwsLink.scrollify({loopTime: 20000});
+        });
+        
       }
     },
     // About us page, note the change from about-us to about_us.

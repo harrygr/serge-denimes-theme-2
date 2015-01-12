@@ -76,10 +76,10 @@ $video_source = of_get_option('video_source');
 </div>
 <div class="row top-buffer">
 	<div class="col-sm-12 hidden-xs img-container home-tile home-third-row">
-		<a href="<?php echo of_get_option( 'tile_3_url', '#' ); ?>"> 
+		<a id="who-wears-serge-link" href="<?php echo of_get_option( 'tile_3_url', '#' ); ?>"> 
 			<img src="<?php echo of_get_option( 'tile_3_image' ); ?>">
-			<div class="home-tile-title"><?php echo of_get_option( 'tile_3_text' ); ?></div>
 		</a>
+			<div class="home-tile-title"><?php echo of_get_option( 'tile_3_text' ); ?></div>
 	</div>
 </div>
 
