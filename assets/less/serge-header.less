@@ -48,35 +48,36 @@ header.navbar {
 	.navbar > .container {
 		border-style:none;
 		.navbar-nav{
-			.menu-border;
-			//display: table;
-			width: 100%;
-			text-align: justify;
-			//table-layout: auto;
-			height:53px;
-			> li {
-				//display: table-cell;
-				display: inline-block;
-				float: none;
-				text-align: center;
-				li{
-					text-align: left;
-				}
-			}
-			&:before, &:after{
-				display: none;
-			}
-			&:after{
-				display: inline-block;
-				content:'';
-				width:100%;
-			}
+			.justified-nav;
 		}
 	}
 }
 @media (min-width: @screen-md-min) {
 	#masthead-link img{
 		margin-top: -77px;
+	}
+}
+
+.justified-nav {
+	.menu-border;
+	width: 100%;
+	text-align: justify;
+	height:53px;
+	> li {
+		display: inline-block;
+		float: none;
+		text-align: center;
+		li{
+			text-align: left;
+		}
+	}
+	&:before, &:after{
+		display: none;
+	}
+	&:after{
+		display: inline-block;
+		content:'';
+		width:100%;
 	}
 }
 

@@ -6779,6 +6779,29 @@ header.navbar.affix nav {
     margin-top: -77px;
   }
 }
+.justified-nav {
+  border-bottom: 8px #333333 solid;
+  width: 100%;
+  text-align: justify;
+  height: 53px;
+}
+.justified-nav > li {
+  display: inline-block;
+  float: none;
+  text-align: center;
+}
+.justified-nav > li li {
+  text-align: left;
+}
+.justified-nav:before,
+.justified-nav:after {
+  display: none;
+}
+.justified-nav:after {
+  display: inline-block;
+  content: '';
+  width: 100%;
+}
 /***************** Social Media Buttons *****************/
 .socmed i {
   color: #333333;
@@ -6843,6 +6866,32 @@ footer .widget ul {
 }
 #footer-widgets .widget-title {
   font-size: 110%;
+}
+#footer-widgets .woochimp_widget_content .widget-title {
+  display: none;
+}
+#menu-footer-menu.navbar-nav {
+  border-bottom: 8px #333333 solid;
+  width: 100%;
+  text-align: justify;
+  height: 53px;
+}
+#menu-footer-menu.navbar-nav > li {
+  display: inline-block;
+  float: none;
+  text-align: center;
+}
+#menu-footer-menu.navbar-nav > li li {
+  text-align: left;
+}
+#menu-footer-menu.navbar-nav:before,
+#menu-footer-menu.navbar-nav:after {
+  display: none;
+}
+#menu-footer-menu.navbar-nav:after {
+  display: inline-block;
+  content: '';
+  width: 100%;
 }
 .woocommerce-validated .help-block,
 .woocommerce-validated .control-label,
@@ -7516,141 +7565,3 @@ figure.alignnone {
 /* ==========================================================================
 *   WooChimp
 *   ========================================================================== */
-#woochimp_registration_form_widget table {
-  width: 100%;
-}
-#woochimp_registration_form_widget input {
-  display: block;
-  width: 100%;
-  height: 35px;
-  padding: 6px 12px;
-  font-size: 15px;
-  line-height: 1.428571429;
-  color: #555555;
-  background-color: #ffffff;
-  background-image: none;
-  border: 1px solid #cccccc;
-  border-radius: 3px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
-  margin-bottom: 10px;
-}
-#woochimp_registration_form_widget input:focus {
-  border-color: #999999;
-  outline: 0;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(153, 153, 153, 0.6);
-  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(153, 153, 153, 0.6);
-}
-#woochimp_registration_form_widget input::-moz-placeholder {
-  color: #999999;
-  opacity: 1;
-}
-#woochimp_registration_form_widget input:-ms-input-placeholder {
-  color: #999999;
-}
-#woochimp_registration_form_widget input::-webkit-input-placeholder {
-  color: #999999;
-}
-#woochimp_registration_form_widget input[disabled],
-#woochimp_registration_form_widget input[readonly],
-fieldset[disabled] #woochimp_registration_form_widget input {
-  cursor: not-allowed;
-  background-color: #eeeeee;
-  opacity: 1;
-}
-textarea#woochimp_registration_form_widget input {
-  height: auto;
-}
-#woochimp_registration_form_widget button {
-  display: inline-block;
-  margin-bottom: 0;
-  font-weight: normal;
-  text-align: center;
-  vertical-align: middle;
-  cursor: pointer;
-  background-image: none;
-  border: 1px solid transparent;
-  white-space: nowrap;
-  padding: 6px 12px 4px 12px;
-  font-size: 15px;
-  line-height: 1.428571429;
-  border-radius: 3px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  color: #333333;
-  background-color: #ffffff;
-  border-color: #cccccc;
-  border-bottom-style: solid;
-  border-bottom-width: 3px;
-}
-#woochimp_registration_form_widget button:focus,
-#woochimp_registration_form_widget button:active:focus,
-#woochimp_registration_form_widget button.active:focus {
-  outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
-}
-#woochimp_registration_form_widget button:hover,
-#woochimp_registration_form_widget button:focus {
-  color: #333333;
-  text-decoration: none;
-}
-#woochimp_registration_form_widget button:active,
-#woochimp_registration_form_widget button.active {
-  outline: 0;
-  background-image: none;
-  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-}
-#woochimp_registration_form_widget button.disabled,
-#woochimp_registration_form_widget button[disabled],
-fieldset[disabled] #woochimp_registration_form_widget button {
-  cursor: not-allowed;
-  pointer-events: none;
-  opacity: 0.65;
-  filter: alpha(opacity=65);
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-#woochimp_registration_form_widget button:hover,
-#woochimp_registration_form_widget button:focus,
-#woochimp_registration_form_widget button:active,
-#woochimp_registration_form_widget button.active,
-.open .dropdown-toggle#woochimp_registration_form_widget button {
-  color: #333333;
-  background-color: #ebebeb;
-  border-color: #adadad;
-}
-#woochimp_registration_form_widget button:active,
-#woochimp_registration_form_widget button.active,
-.open .dropdown-toggle#woochimp_registration_form_widget button {
-  background-image: none;
-  margin-top: 1px;
-  border-bottom-width: 2px;
-}
-#woochimp_registration_form_widget button.disabled,
-#woochimp_registration_form_widget button[disabled],
-fieldset[disabled] #woochimp_registration_form_widget button,
-#woochimp_registration_form_widget button.disabled:hover,
-#woochimp_registration_form_widget button[disabled]:hover,
-fieldset[disabled] #woochimp_registration_form_widget button:hover,
-#woochimp_registration_form_widget button.disabled:focus,
-#woochimp_registration_form_widget button[disabled]:focus,
-fieldset[disabled] #woochimp_registration_form_widget button:focus,
-#woochimp_registration_form_widget button.disabled:active,
-#woochimp_registration_form_widget button[disabled]:active,
-fieldset[disabled] #woochimp_registration_form_widget button:active,
-#woochimp_registration_form_widget button.disabled.active,
-#woochimp_registration_form_widget button[disabled].active,
-fieldset[disabled] #woochimp_registration_form_widget button.active {
-  background-color: #ffffff;
-  border-color: #cccccc;
-}
-#woochimp_registration_form_widget button .badge {
-  color: #ffffff;
-  background-color: #333333;
-}

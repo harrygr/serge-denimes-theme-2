@@ -23,6 +23,28 @@
     common: {
       init: function() {
         // JavaScript to be fired on all pages
+        
+        /*** Fix the woochimp box */
+        var $wooForm = $('#woochimp_registration_form_widget');
+
+        // Move the form items outside the table
+        $wooForm.find('input, button')
+        .prependTo($wooForm);
+        
+        // Remove the table
+        $wooForm.find('table').remove();
+        
+        // Wrap the form items in a div
+        $wooForm.find('input').addClass('form-control').each(function () {
+          $(this).next('button')
+          .andSelf()
+          .wrapAll('<div class="input-group"/>');
+        });
+        
+        // Wrap the button in a div
+        $wooForm.find('button').addClass('btn btn-default').wrap('<span class="input-group-btn"></span>');
+        /*******/
+
 
         // Sort the affix menu bar
         $(function() {
