@@ -4,6 +4,14 @@ add_theme_support( 'woocommerce' );
 //prevent loading of default woocommerce styles
 add_filter( 'woocommerce_enqueue_styles', '__return_false' );
 
+function show_out_of_stock_notice()
+{
+	global $product;
+	if( $product->get_total_stock() == 0 )
+		echo "<small class='text-danger'>Out of Stock</small>";
+};
+add_action( 'woocommerce_after_shop_loop_item_title', 'show_out_of_stock_notice' );
+
 //hide the sales badge
 add_filter('woocommerce_sale_flash', 'woo_custom_hide_sales_flash');
 function woo_custom_hide_sales_flash() {
