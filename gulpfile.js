@@ -20,11 +20,10 @@ gulp.task('less', function() {
 });
 
 var scripts = [
-'assets/js/_main.js',
 'assets/js/vendor/jquery.fancybox.js',
 'assets/js/vendor/jquery.fancybox-media.js',
 'assets/js/vendor/imagesloaded.pkgd.min.js',
-
+'assets/js/vendor/masonry.min.js',
 'assets/js/plugins/scrollify.plugin.js',
 'assets/js/plugins/bootstrap/transition.js',
 'assets/js/plugins/bootstrap/alert.js',
@@ -38,6 +37,7 @@ var scripts = [
 'assets/js/plugins/bootstrap/scrollspy.js',
 'assets/js/plugins/bootstrap/tab.js',
 'assets/js/plugins/bootstrap/affix.js',
+'assets/js/_main.js',
 ];
 
 gulp.task('scripts', function(){
