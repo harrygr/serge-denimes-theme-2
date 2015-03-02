@@ -13,9 +13,10 @@ function show_out_of_stock_notice($price)
 	}
 	return $price;
 }
-
-add_filter( 'woocommerce_get_price_html', 'show_out_of_stock_notice', 2, 1);
-
+if ( !is_admin() ) 
+{
+	add_filter( 'woocommerce_get_price_html', 'show_out_of_stock_notice', 2, 1);
+}
 
 //hide the sales badge
 add_filter('woocommerce_sale_flash', 'woo_custom_hide_sales_flash');
