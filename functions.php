@@ -20,5 +20,5 @@ require_once locate_template('/lib/scripts.php');         // Scripts and stylesh
 require_once locate_template('/lib/custom.php');          // Custom functions
 require_once locate_template('/lib/woocommerce.php');
 require_once locate_template('/lib/shop-forms.php');
-require_once locate_template('/lib/shop-tabs.php');	  // Woocommerce functions 
-require_once locate_template('/lib/serge-settings.php');	  // Woocommerce functions 
+require_once locate_template('/lib/shop-tabs.php');		  // Woocommerce functions 
+require_once locate_template('/lib/serge-settings.php');  // Woocommerce functions 

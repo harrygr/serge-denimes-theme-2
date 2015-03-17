@@ -15,6 +15,9 @@ function roots_scripts() {
 
   //The Google Fonts
   wp_enqueue_style( 'google_fonts', '//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Oswald', false, false, 'all' );
+  
+  //custom.css
+  wp_enqueue_style('roots_custom', get_template_directory_uri() . '/assets/css/custom.css', false, '9880649384aea9f1ee166331c0a30daa');
 
   //Social Media Scripts
   //We only show pinterest if a featured image exists
@@ -58,6 +61,8 @@ function roots_scripts() {
   //wp_enqueue_script('fancybox');
   //wp_enqueue_script('imagesloaded');
   wp_enqueue_script('roots_scripts');
+	wp_register_script( 'custom', get_template_directory_uri() . '/assets/js/custom.js', array(), false, true);
+  wp_enqueue_script( 'custom' );
 }
 add_action('wp_enqueue_scripts', 'roots_scripts', 100);
 

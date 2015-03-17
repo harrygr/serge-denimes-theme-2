@@ -90,7 +90,7 @@ global $woocommerce, $product, $post;
 			<div class="variations_button row top-buffer">
 				<?php woocommerce_quantity_input(); ?>
 				<div class="col-xs-6">
-				<button type="submit" class="single_add_to_cart_button button alt btn btn-primary"><?php echo $product->single_add_to_cart_text(); ?></button>
+				<button type="submit" class="single_add_to_cart_button btn-primary button alt btn btn-primary"><?php echo $product->single_add_to_cart_text(); ?></button>
 				</div>
 			</div>
 

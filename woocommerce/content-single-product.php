@@ -28,7 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 	<div itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class(array('row', 'top-buffer')); ?>>
 
-		<div class="images col-sm-5">
+		<div class="images col-sm-6">
 			<?php
 		/**
 		 * woocommerce_before_single_product_summary hook
@@ -39,7 +39,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		do_action( 'woocommerce_before_single_product_summary' );
 		?>
 	</div>
-	<div class="summary entry-summary col-sm-7">
+	<div class="summary entry-summary col-sm-6">
 
 		<?php
 			/**
@@ -68,7 +68,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 		?>
 		<meta itemprop="url" content="<?php the_permalink(); ?>" />
-		<?php get_template_part('templates/social', 'buttons'); ?>
+		<?php echo do_shortcode('[ultimatesocial networks="twitter,facebook,pinterest" url="" custom_class="my-ultimatesocial-class" align="left"]'); ?>
+		<?php //get_template_part('templates/social', 'buttons'); ?>
 	</div><!-- .summary -->
 </div><!-- #product-<?php the_ID(); ?> -->
 <div class="row top-buffer">

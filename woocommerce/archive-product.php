@@ -20,12 +20,14 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
 		 * @hooked woocommerce_breadcrumb - 20
 		 */
-		do_action( 'woocommerce_before_main_content' );
+		//do_action( 'woocommerce_before_main_content' );
 		?>
+		
+		<?php woocommerce_output_content_wrapper(); ?>
 
 		<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 
-		<h1 class="page-title"><?php woocommerce_page_title(); ?></h1>
+		<!--<h1 class="page-title"><?php// woocommerce_page_title(); ?></h1>-->
 
 	<?php endif; ?>
 
@@ -33,6 +35,10 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 	<?php if ( have_posts() ) : ?>
 	<div class="row">
+		<div class="brb">
+		<div class="col-md-8"><?php woocommerce_breadcrumb(); ?></div>
+		<?php woocommerce_catalog_ordering(); ?>
+		</div>
 		<?php
 				/**
 				 * woocommerce_before_shop_loop hook
@@ -40,7 +46,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 				 * @hooked woocommerce_result_count - 20
 				 * @hooked woocommerce_catalog_ordering - 30
 				 */
-				do_action( 'woocommerce_before_shop_loop' );
+				//do_action( 'woocommerce_before_shop_loop' );
 				?>
 			</div>
 

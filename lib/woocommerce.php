@@ -4,20 +4,6 @@ add_theme_support( 'woocommerce' );
 //prevent loading of default woocommerce styles
 add_filter( 'woocommerce_enqueue_styles', '__return_false' );
 
-function show_out_of_stock_notice($price)
-{
-	global $product;
-	if( $product->get_total_stock() === 0 )
-	{
-		return "<small class='text-danger'>Out of Stock</small>";
-	}
-	return $price;
-}
-if ( !is_admin() ) 
-{
-	add_filter( 'woocommerce_get_price_html', 'show_out_of_stock_notice', 2, 1);
-}
-
 //hide the sales badge
 add_filter('woocommerce_sale_flash', 'woo_custom_hide_sales_flash');
 function woo_custom_hide_sales_flash() {
@@ -68,7 +54,7 @@ function wg_view_all_products(){
 	if($_GET['view'] === 'all'){
 		return '9999';
 	}
-	return 9;
+	return 8000;
 }
 
 
@@ -124,8 +110,8 @@ function custom_override_checkout_fields( $fields ) {
 		}
 	}
 	//pr($fields);
-    // $fields['billing']['billing_first_name']['placeholder'] = 'My new placeholder';
-    // $fields['billing']['billing_first_name']['label'] = 'My new label';
+     // $fields['billing']['billing_first_name']['placeholder'] = 'My new placeholder';
+     // $fields['billing']['billing_first_name']['label'] = 'My new label';
 	return $fields;
 }
 
@@ -157,5 +143,25 @@ function custom_credit_card_fields($fields, $id)
 return $fields;
 }
 
+/*
+* wc_remove_related_products
+*/
+function wc_remove_related_products( $args ) {
+return array();
+}
+add_filter('woocommerce_related_products_args','wc_remove_related_products', 10);
 
+/** 
+ * remove on single product panel, "Product Description"
+ * since it already says "Description" on tab.
+ */
+add_filter('woocommerce_product_description_heading',
+'isa_product_description_heading');
+
+function isa_product_description_heading() {
+	echo '';
+}
+
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 30 );
 ?>

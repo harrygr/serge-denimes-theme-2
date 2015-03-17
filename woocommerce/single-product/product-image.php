@@ -12,8 +12,17 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 global $post, $woocommerce, $product;
 
 ?>
+<script src="<?php echo get_bloginfo('stylesheet_directory'); ?>/assets/js/jquery.bxslider.js"></script>
+<link href="<?php echo get_bloginfo('stylesheet_directory'); ?>/assets/css/jquery.bxslider.css" rel="stylesheet" />
+<script type="text/javascript">
+jQuery(document).ready(function(){
+	jQuery('.bxslider').bxSlider({
+		pager: false
+	});
+});
+</script>
 
-
+<div class="bxslider">
 	<?php
 		if ( has_post_thumbnail() ) {
 
@@ -41,3 +50,4 @@ global $post, $woocommerce, $product;
 
 	<?php do_action( 'woocommerce_product_thumbnails' ); ?>
 
+</div>

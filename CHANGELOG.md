@@ -1,6 +1,25 @@
 ### HEAD
 * Update to Bootstrap 3.1.1
 
+
+### 6.5.3: March 1st, 2014 - by Metal Potato
+* Updated shop page to show four columns instead of three
+* Increased max-width to 1280px
+* Reduced width of the sidebar slightly
+* Made site-wide changes to dimensions of images, home page banners etc to accommodate new sites max-width
+* Changed nav and header fonts to Lato Google Font
+* Made site-wide changes to font sizes
+* Single product page photo update to show gallery pictures in a slider instead of thumbnails
+* Add to cart button changed
+* Added a new Size Guide tab to single product page which displays in a popup
+* Added some hooks to widget.php to show the unisex or womens sidebar menu based on parent categories Unisex or Womens in the shop
+* Created new page template 'Online Store Template' which powers the Unisex Womens Selection page
+* Removed detail, returns and wash instructions tabs from single product page
+* All input and textarea boxes' styles are changed
+* Installed a new social share plugin, shortcode entered at bottom of blog posts, home page footer, single product pages
+* Blog comments and contact form now have placeholder text rather than separate field titles
+* Removed archive page titles, moved default sorting field and breadcrumbs
+
 ### 6.5.2: February 4th, 2014
 * Update to Bootstrap 3.1.0
 * Move DOM routing into an anonymous function to support jQuery noConflict

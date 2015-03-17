@@ -160,6 +160,10 @@
 
 function isMobile() 
 {
- return (window.innerWidth <= 600); 
+ if(window.innerWidth <= 600) {
+   return true;
+ } else {
+   return false;
+ }
 }
 

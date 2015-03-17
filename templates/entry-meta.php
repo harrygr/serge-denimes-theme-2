@@ -12,5 +12,6 @@
 <?php if ( in_category('serge-song-of-the-week') ){ ?>
 <p class="spotify-meta"><a href="http://open.spotify.com/user/1163287097/playlist/1ztfJ8Z9278J7AVPtRSMg5" title="Serge Songs of the Week on Spotify">Subscribe to the Serge Spotify</a></p>
 <?php } ?>
-<?php get_template_part('templates/social', 'buttons'); ?>
+<?php //get_template_part('templates/social', 'buttons'); ?>
+<?php echo do_shortcode('[ultimatesocial networks="twitter,facebook,pinterest" url="" custom_class="my-ultimatesocial-class" align="left"]'); ?>
 <hr>

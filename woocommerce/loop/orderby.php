@@ -16,24 +16,26 @@ if ( 1 == $wp_query->found_posts || ! woocommerce_products_will_display() )
 ?>
 <div class="col-md-4">
 <form class="woocommerce-ordering" method="get">
-	<select name="orderby" class="orderby form-control">
-		<?php
-			$catalog_orderby = apply_filters( 'woocommerce_catalog_orderby', array(
-				'menu_order' => __( 'Default sorting', 'woocommerce' ),
-				'popularity' => __( 'Sort by popularity', 'woocommerce' ),
-				'rating'     => __( 'Sort by average rating', 'woocommerce' ),
-				'date'       => __( 'Sort by newness', 'woocommerce' ),
-				'price'      => __( 'Sort by price: low to high', 'woocommerce' ),
-				'price-desc' => __( 'Sort by price: high to low', 'woocommerce' )
-			) );
+	<div id="orderby">
+		<select name="orderby" class="orderby form-control">
+			<?php
+				$catalog_orderby = apply_filters( 'woocommerce_catalog_orderby', array(
+					'menu_order' => __( 'Default sorting', 'woocommerce' ),
+					'popularity' => __( 'Sort by popularity', 'woocommerce' ),
+					'rating'     => __( 'Sort by average rating', 'woocommerce' ),
+					'date'       => __( 'Sort by newness', 'woocommerce' ),
+					'price'      => __( 'Sort by price: low to high', 'woocommerce' ),
+					'price-desc' => __( 'Sort by price: high to low', 'woocommerce' )
+				) );
 
-			if ( get_option( 'woocommerce_enable_review_rating' ) === 'no' )
-				unset( $catalog_orderby['rating'] );
+				if ( get_option( 'woocommerce_enable_review_rating' ) === 'no' )
+					unset( $catalog_orderby['rating'] );
 
-			foreach ( $catalog_orderby as $id => $name )
-				echo '<option value="' . esc_attr( $id ) . '" ' . selected( $orderby, $id, false ) . '>' . esc_attr( $name ) . '</option>';
-		?>
-	</select>
+				foreach ( $catalog_orderby as $id => $name )
+					echo '<option value="' . esc_attr( $id ) . '" ' . selected( $orderby, $id, false ) . '>' . esc_attr( $name ) . '</option>';
+			?>
+		</select>
+	</div>
 	<?php
 		// Keep query string vars intact
 		foreach ( $_GET as $key => $val ) {

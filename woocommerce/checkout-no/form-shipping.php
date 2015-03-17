@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		?>
 
 		<h3 id="ship-to-different-address">
-			<label style="margin:0 0 0 10px;">
+			<label style="margin:0;">
 			<input id="ship-to-different-address-checkbox" class="input-checkbox" <?php checked( $ship_to_different_address, 1 ); ?> type="checkbox" name="ship_to_different_address" value="1" />
 			<?php _e( 'Ship to a different address?', 'woocommerce' ); ?>
 			</label>

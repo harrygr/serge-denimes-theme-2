@@ -16,7 +16,15 @@ function roots_widgets_init() {
   register_sidebar(array(
     'name'          => __('Footer', 'roots'),
     'id'            => 'sidebar-footer',
-    'before_widget' => '<section class="widget col-sm-4 %1$s %2$s">',
+    'before_widget' => '<section class="widget col-md-8 col-sm-7 clearfix %1$s %2$s">',
+    'after_widget'  => '</section>',
+    'before_title'  => '<h3 class="widget-title">',
+    'after_title'   => '</h3>',
+  ));
+  register_sidebar(array(
+    'name'          => __('Footer', 'roots'),
+    'id'            => 'sidebar-footer2',
+    'before_widget' => '<section class="widget col-md-4 col-sm-5 %1$s %2$s">',
     'after_widget'  => '</section>',
     'before_title'  => '<h3 class="widget-title">',
     'after_title'   => '</h3>',
@@ -139,4 +147,92 @@ class Roots_Vcard_Widget extends WP_Widget {
     <?php
     }
   }
+}
+
+if ( !is_admin() ){
+add_filter('sidebars_widgets', 'hidemywidget');
+}
+function hidemywidget($all_widgets)
+{
+$widget_key_men_menu='nav_menu-7';
+$widget_key_women_menu='nav_menu-8';
+
+	if (is_tax('product_cat')) {
+
+		$top_term=get_top_level_term(get_queried_object(),'product_cat');
+		if($top_term->term_id==140){
+	        foreach ($all_widgets['sidebar-shop'] as $i => $inst)
+        {
+
+         
+            if($inst== $widget_key_women_menu)
+            {
+                
+                unset($all_widgets['sidebar-shop'][$i]);
+            }
+        }
+		}else{
+	        foreach ($all_widgets['sidebar-shop'] as $i => $inst)
+        {
+
+         
+            if($inst== $widget_key_men_menu)
+            {
+                
+                unset($all_widgets['sidebar-shop'][$i]);
+            }
+        }
+		}
+  }else{
+		$post_id=get_the_ID();
+		$terms = wp_get_post_terms( $post_id, 'product_cat' );
+		if(!empty($terms)){
+    $top_term=get_top_level_term($terms[0],'product_cat');
+		if($top_term->term_id==140){
+	        foreach ($all_widgets['sidebar-shop'] as $i => $inst)
+        {
+
+         
+            if($inst== $widget_key_women_menu)
+            {
+                
+                unset($all_widgets['sidebar-shop'][$i]);
+            }
+        }
+		}else{
+	        foreach ($all_widgets['sidebar-shop'] as $i => $inst)
+        {
+
+         
+            if($inst== $widget_key_men_menu)
+            {
+                
+                unset($all_widgets['sidebar-shop'][$i]);
+            }
+        }
+		}
+		}else{
+			
+	        foreach ($all_widgets['sidebar-shop'] as $i => $inst)
+        {
+
+         
+            if($inst== $widget_key_men_menu || $inst== $widget_key_women_menu)
+            {
+                
+                unset($all_widgets['sidebar-shop'][$i]);
+            }
+        }			
+		}
+		
+
+	
+}
+
+    return $all_widgets;
+}
+function get_top_level_term($term,$taxonomy){
+    if($term->parent==0) return $term;
+    $parent = get_term( $term->parent,$taxonomy);
+    return get_top_level_term( $parent , $taxonomy );
 }

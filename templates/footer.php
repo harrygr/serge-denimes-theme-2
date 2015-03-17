@@ -12,10 +12,11 @@
   </nav>
   <div class="row top-buffer">
     <?php dynamic_sidebar('sidebar-footer'); ?>
+	<?php dynamic_sidebar('sidebar-footer2'); ?>
   </div>
   <div class="row bottom-content top-buffer">
-    <div class="col-sm-6"><?php if ( is_page() ) get_template_part('templates/social', 'buttons'); ?></div>
-    <p class="col-sm-6 text-right">&copy; Copyright <?php bloginfo('name'); ?> <?php echo date('Y'); ?></p>
+    <div class="col-sm-6"><?php if(is_front_page() ) { ?><?php echo do_shortcode('[ultimatesocial networks="twitter,facebook,pinterest" url="" custom_class="my-ultimatesocial-class" align="left"]'); ?><?php } ?><?php //if ( is_page() ) get_template_part('templates/social', 'buttons'); ?></div>
+    <p class="col-sm-6 text_right">&copy; Copyright <?php bloginfo('name'); ?> <?php echo date('Y'); ?></p>
   </div>
 </div>
 </footer>

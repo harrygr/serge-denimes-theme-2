@@ -29,13 +29,13 @@ if ( ! $product || ! $product->is_visible() )
 $woocommerce_loop['loop']++;
 
 // Extra post classes
-$classes = array('col-md-4', 'col-xs-6', 'top-buffer');
+$classes = array('col-md-3', 'col-xs-6', 'top-buffer');
 if ( 0 == ( $woocommerce_loop['loop'] - 1 ) % $woocommerce_loop['columns'] || 1 == $woocommerce_loop['columns'] )
 	$classes[] = 'first';
 if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 	$classes[] = 'last';
 ?>
-<div <?php post_class( $classes ); ?>>
+<div data-div-id="product-part" data-product-id="<?php echo get_the_ID(); ?>" <?php post_class( $classes ); ?>>
 
 	<?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
 
@@ -50,21 +50,41 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 			 */
 			do_action( 'woocommerce_before_shop_loop_item_title' );
 		?>
-		<div class="catalog-info">
-		<h3><?php the_title(); ?></h3>
-
-		<?php
-			/**
-			 * woocommerce_after_shop_loop_item_title hook
-			 *
-			 * @hooked woocommerce_template_loop_rating - 5
-			 * @hooked woocommerce_template_loop_price - 10
-			 */
-			do_action( 'woocommerce_after_shop_loop_item_title' );
-		?>
-		</div>
 	</a>
+		<div id="catalog-info_<?php echo get_the_ID(); ?>" class="catalog-info">
+            <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+    
+            <?php
+                /**
+                 * woocommerce_after_shop_loop_item_title hook
+                 *
+                 * @hooked woocommerce_template_loop_rating - 5
+                 * @hooked woocommerce_template_loop_price - 10
+                 */
+                do_action( 'woocommerce_after_shop_loop_item_title' );
+            ?>
+            <!--<p class="product-view-link"><a href="<?php //the_permalink(); ?>">View</a></p>-->
+            
+			<?php
+				/*if( $product->is_type( 'simple' ) ){
+					echo '<p class="product-view-link"><a href="?add-to-cart='.get_the_ID().'">Add To Cart</a></p>';
+				} elseif( $product->is_type( 'variable' ) ){
+					echo '<p class="product-view-link"><a href="'.get_permalink().'">Select Options</a></p>';
+				}*/
+            ?>
+		</div>
 
 	<?php do_action( 'woocommerce_after_shop_loop_item' ); ?>
 
 </div>
+<!--<script type="text/javascript">
+	jQuery( document ).ready(function() {
+		jQuery('div[data-div-id="product-part"]').hover(function() {
+			var productcatalog = jQuery(this).attr("data-product-id");
+			jQuery('#catalog-info_'+productcatalog).stop(true).fadeTo(50, 0.8, function() { jQuery(this).show(); });
+		}, function() {
+			var productcatalog = jQuery(this).attr("data-product-id");
+			jQuery('#catalog-info_'+productcatalog).stop(true).fadeTo(50, 0, function () { jQuery(this).hide(); });
+		});
+	});
+</script>-->

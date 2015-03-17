@@ -20,7 +20,12 @@ define('POST_EXCERPT_LENGTH', 40); // Length in words for excerpt_length filter 
 function roots_main_class() {
   if (roots_display_sidebar()) {
     // Classes on pages with the sidebar
-    $class = 'col-sm-9 col-sm-push-3';
+	$term_object = get_queried_object();
+	if( $term_object->taxonomy == "product_cat" && $term_object->parent == 0 ) {
+	    $class = 'col-sm-12';
+	} else {
+		$class = 'col-sm-10 col-sm-push-2';
+	}
   } else {
     // Classes on full width pages
     $class = 'col-sm-12';
@@ -33,7 +38,7 @@ function roots_main_class() {
  * .sidebar classes
  */
 function roots_sidebar_class() {
-  return 'col-sm-3 col-sm-pull-9';
+  return 'col-sm-2 col-sm-pull-10';
 }
 
 /**
