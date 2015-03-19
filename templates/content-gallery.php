@@ -17,7 +17,7 @@ $attachments = get_children( $args );
 endwhile; 
 
 foreach ($attachments as $attachment) {
-	$image_tile = wp_get_attachment_image_src($attachment->ID, 'landscape-thumb');
+	$image_tile = wp_get_attachment_image_src($attachment->ID, 'whowears-thumb');
 	$image_full = wp_get_attachment_image_src($attachment->ID, 'full');
 	?>
 	<div class="col-sm-6s col-md-4s top-bufferd img-container">
