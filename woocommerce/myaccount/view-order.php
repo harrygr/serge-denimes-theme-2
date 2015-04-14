@@ -18,7 +18,7 @@ $status_classes = array(
 'failed'		=> 'text-danger',
 'refunded'		=> 'text-success',
 	);
-
+if (!isset($status->slug)) $status->slug = str_replace(' ', '-', strtolower($status->name));
 $status_class =  isset($status_classes[$status->slug]) ? $status_classes[$status->slug] : '';
 
 echo '<p class="order-info">' . 

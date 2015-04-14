@@ -14,10 +14,10 @@ function roots_scripts() {
   wp_enqueue_style('roots_main', get_template_directory_uri() . '/assets/css/main.min.css', false, '9880649384aea9f1ee166331c0a30daa');
 
   //The Google Fonts
-  wp_enqueue_style( 'google_fonts', '//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Oswald', false, false, 'all' );
-  
+  //wp_enqueue_style( 'google_fonts', '//fonts.googleapis.com/css?family=Lato:300,400,700,400italic,300,700italic|Oswald', false, false, 'all' );
+  wp_enqueue_style( 'google_fonts', 'http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic', false, false, 'all' );
   //custom.css
-  wp_enqueue_style('roots_custom', get_template_directory_uri() . '/assets/css/custom.css', false, '9880649384aea9f1ee166331c0a30daa');
+  //wp_enqueue_style('roots_custom', get_template_directory_uri() . '/assets/css/custom.css', false, '9880649384aea9f1ee166331c0a30daa');
 
   //Social Media Scripts
   //We only show pinterest if a featured image exists
@@ -51,18 +51,13 @@ function roots_scripts() {
     wp_enqueue_script('comment-reply');
   }
 
-  //wp_register_script('modernizr', get_template_directory_uri() . '/assets/js/vendor/modernizr-2.7.0.min.js', array(), null, false);
   wp_register_script('roots_scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', array('jquery', 'jquery-cookie'), '0fc6af96786d8f267c8686338a34cd38', true);
-  //wp_register_script('fancybox', get_template_directory_uri() . '/assets/js/vendor/jquery.fancybox.js', array('jquery'), null, false);
-  //wp_register_script('imagesloaded', get_template_directory_uri() . '/assets/js/vendor/imagesloaded.pkgd.min.js', array('jquery'), null, false);
 
-  //wp_enqueue_script('modernizr');
   wp_enqueue_script('jquery');
-  //wp_enqueue_script('fancybox');
-  //wp_enqueue_script('imagesloaded');
   wp_enqueue_script('roots_scripts');
-	wp_register_script( 'custom', get_template_directory_uri() . '/assets/js/custom.js', array(), false, true);
-  wp_enqueue_script( 'custom' );
+
+	//wp_register_script( 'custom', get_template_directory_uri() . '/assets/js/custom.js', array(), false, true);
+  //wp_enqueue_script( 'custom' );
 }
 add_action('wp_enqueue_scripts', 'roots_scripts', 100);
 

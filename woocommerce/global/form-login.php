@@ -7,39 +7,43 @@
  * @version     2.1.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly
+}
 
-if ( is_user_logged_in() ) 
+if ( is_user_logged_in() ) {
 	return;
-?>
-<div class="row">
-	<div class="col-md-6">
+}
 
+?>
 <form method="post" class="login" <?php if ( $hidden ) echo 'style="display:none;"'; ?>>
 
 	<?php do_action( 'woocommerce_login_form_start' ); ?>
 
 	<?php if ( $message ) echo wpautop( wptexturize( $message ) ); ?>
-
-	<div class="form-group">
+	<div class="row">
+	<p class="form-row form-row-first col-md-6">
 		<label for="username"><?php _e( 'Username or email', 'woocommerce' ); ?> <span class="required">*</span></label>
-		<input type="text" class="form-control" name="username" id="username" />
-	</div>
-	<div class="form-group">
+		<input type="text" class="input-text form-control" name="username" id="username" />
+	</p>
+	<p class="form-row form-row-last col-md-6">
 		<label for="password"><?php _e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label>
-		<input class="form-control" type="password" name="password" id="password" />
+		<input class="input-text form-control" type="password" name="password" id="password" />
+	</p>
 	</div>
 	<div class="clear"></div>
 
 	<?php do_action( 'woocommerce_login_form' ); ?>
 
-	<div class="form-group">
+	<div class="form-row form-group">
 		<?php wp_nonce_field( 'woocommerce-login' ); ?>
-		<input type="submit" class="button btn btn-success" name="login" value="<?php _e( 'Login', 'woocommerce' ); ?>" />
+		<input type="submit" class="button btn btn-primary " name="login" value="<?php _e( 'Login', 'woocommerce' ); ?>" />
 		<input type="hidden" name="redirect" value="<?php echo esc_url( $redirect ) ?>" />
-		<label for="rememberme" class="inline">
+		<span class="checkbox">
+		<label class="inline">
 			<input name="rememberme" type="checkbox" id="rememberme" value="forever" /> <?php _e( 'Remember me', 'woocommerce' ); ?>
 		</label>
+		</span>
 	</div>
 	<p class="lost_password">
 		<a href="<?php echo esc_url( wc_lostpassword_url() ); ?>"><?php _e( 'Lost your password?', 'woocommerce' ); ?></a>
@@ -50,6 +54,3 @@ if ( is_user_logged_in() )
 	<?php do_action( 'woocommerce_login_form_end' ); ?>
 
 </form>
-		
-	</div>
-</div>

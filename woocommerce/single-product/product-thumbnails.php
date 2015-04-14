@@ -15,7 +15,7 @@ $attachment_ids = $product->get_gallery_attachment_ids();
 
 if ( $attachment_ids ) {
 	?>
-	<!--<div class="thumbnails row">-->
+	<!-- Thumbnails -->
 	<?php
 
 		$loop = 0;
@@ -23,13 +23,13 @@ if ( $attachment_ids ) {
 
 		foreach ( $attachment_ids as $attachment_id ) {
 
-			$classes = array( 'zoom' );
+			$classes = array( 'zoomy', 'item' );
 
 			if ( $loop == 0 || $loop % $columns == 0 )
-				$classes[] = 'first';
+				$classes[] = '';
 
 			if ( ( $loop + 1 ) % $columns == 0 )
-				$classes[] = 'last';
+				$classes[] = '';
 
 			$image_link = wp_get_attachment_url( $attachment_id );
 
@@ -40,12 +40,12 @@ if ( $attachment_ids ) {
 			$image_class = esc_attr( implode( ' ', $classes ) );
 			$image_title = esc_attr( get_the_title( $attachment_id ) );
 			//echo '<div class="col-xs-4 top-buffer">';
-			echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', sprintf( '<a href="%s" class="%s" title="%s" rel="gall[product-gallery]">%s</a>', $image_link, $image_class, $image_title, $image ), $attachment_id, $post->ID, $image_class );
-			//echo '</div>';
+			//echo "<div class='item'>";
+			//echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', sprintf( '<a href="%s" class="%s" title="%s" rel="gall[product-gallery]">%s</a>', $image_link, $image_class, $image_title, $image ), $attachment_id, $post->ID, $image_class );
+			
+			echo sprintf('<a class="item" href="%s" title="%s">%s</a>', $image_link, $image_title, $image) . PHP_EOL;
+			echo PHP_EOL;
 			$loop++;
 		}
 
-	?>
-    <!--</div>-->
-	<?php
 }

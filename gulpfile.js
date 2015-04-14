@@ -40,11 +40,34 @@ var scripts = [
 'assets/js/_main.js',
 ];
 
+// new scripts using bower
+var scripts = [
+	//'bower_components/bxslider/jquery.bxSlider.min.js',
+	'bower_components/fancybox/source/jquery.fancybox.js',
+	'bower_components/fancybox/source/helpers/jquery.fancybox-media.js',
+	'bower_components/imagesloaded/imagesloaded.pkgd.js',
+	'bower_components/masonry/dist/masonry.pkgd.js',
+	'assets/js/plugins/bootstrap/transition.js',
+	'assets/js/plugins/bootstrap/alert.js',
+	'assets/js/plugins/bootstrap/button.js',
+	'assets/js/plugins/bootstrap/carousel.js',
+	'assets/js/plugins/bootstrap/collapse.js',
+	'assets/js/plugins/bootstrap/dropdown.js',
+	'assets/js/plugins/bootstrap/modal.js',
+	'assets/js/plugins/bootstrap/tooltip.js',
+	'assets/js/plugins/bootstrap/popover.js',
+	'assets/js/plugins/bootstrap/scrollspy.js',
+	'assets/js/plugins/bootstrap/tab.js',
+	'assets/js/plugins/bootstrap/affix.js',
+	'assets/js/_main.js',
+	'assets/js/conor.js',
+];
+
 gulp.task('scripts', function(){
 	return gulp.src(scripts)
 	.pipe(concat('scripts.js'))
 	.pipe(rename({ suffix: '.min' }))
-	.pipe(uglify())
+	//.pipe(uglify())
 	.pipe(gulp.dest('./assets/js'))
 	.pipe(notify('Scripts compiled!'));
 });

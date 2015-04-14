@@ -1,0 +1,22 @@
+{
+  "name": "serge-denimes-theme-2",
+  "version": "0.0.1",
+  "homepage": "http://sergedenimes.com",
+  "authors": [
+    "Harry G <harrygrumbar@hotmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bxslider": "*",
+    "imagesloaded": "~3.1.8",
+    "fancybox": "~2.1.5",
+    "masonry": "~3.3.0"
+  }
+}

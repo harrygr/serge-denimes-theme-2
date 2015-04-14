@@ -12,17 +12,20 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 global $post, $woocommerce, $product;
 
 ?>
-<script src="<?php echo get_bloginfo('stylesheet_directory'); ?>/assets/js/jquery.bxslider.js"></script>
 <link href="<?php echo get_bloginfo('stylesheet_directory'); ?>/assets/css/jquery.bxslider.css" rel="stylesheet" />
-<script type="text/javascript">
-jQuery(document).ready(function(){
-	jQuery('.bxslider').bxSlider({
-		pager: false
-	});
-});
-</script>
 
-<div class="bxslider">
+
+<div id="carousel-product-images" class="bxsliderx carousel slide" data-ride="carousel">
+
+ <!-- Indicators -->
+<!--   <ol class="carousel-indicators">
+    <li data-target="#carousel-product-images" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-product-images" data-slide-to="1"></li>
+    <li data-target="#carousel-product-images" data-slide-to="2"></li>
+  </ol> -->
+
+	<div class="carousel-inner"  role="listbox">
+	<!-- First Image -->
 	<?php
 		if ( has_post_thumbnail() ) {
 
@@ -39,7 +42,8 @@ jQuery(document).ready(function(){
 				$gallery = '';
 			}
 
-			echo apply_filters( 'woocommerce_single_product_image_html', sprintf( '<a href="%s" itemprop="image" class="woocommerce-main-image zoom" title="%s" rel="gall[product-gallery]">%s</a>', $image_link, $image_title, $image ), $post->ID );
+			echo sprintf('<a class="item active" href="%s" title="%s">%s</a>', $image_link, $image_title, $image) . PHP_EOL;
+			//echo apply_filters( 'woocommerce_single_product_image_html', sprintf( '<a href="%s" itemprop="image" class="woocommerce-main-image zoom item active" title="%s" rel="gall[product-gallery]">%s</a>', $image_link, $image_title, $image ), $post->ID );
 
 		} else {
 
@@ -47,7 +51,20 @@ jQuery(document).ready(function(){
 
 		}
 	?>
-
+	
+	
 	<?php do_action( 'woocommerce_product_thumbnails' ); ?>
 
+
+	</div>
+		<!-- Controls -->
+		  <a class="left carousel-control" href="#carousel-product-images" role="button" data-slide="prev">
+		    <span class="fa fa-chevron-left glyphicon-chevron-left" aria-hidden="true"></span>
+		    <span class="sr-only">Previous</span>
+		  </a>
+		  <a class="right carousel-control" href="#carousel-product-images" role="button" data-slide="next">
+		    <span class="fa fa-chevron-right glyphicon-chevron-right" aria-hidden="true"></span>
+		    <span class="sr-only">Next</span>
+		  </a>
 </div>
+

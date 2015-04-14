@@ -74,6 +74,11 @@
             });
           });
 
+          //bxslider
+          // jQuery('.bxslider').bxSlider({
+          //   pager: false
+          // });
+
           //activate masonary, only if it's loaded
           if (typeof(jQuery().masonry) === 'function') {
             $('#masonary-container').imagesLoaded(function() {

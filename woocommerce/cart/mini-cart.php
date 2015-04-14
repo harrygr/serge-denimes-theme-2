@@ -20,46 +20,48 @@ global $woocommerce;
 
 	<?php if ( sizeof( WC()->cart->get_cart() ) > 0 ) : ?>
 
-		<?php
-			foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
-				$_product     = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
-				$product_id   = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
+	<?php
+	foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+		$_product     = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
+		$product_id   = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
 
-				if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_widget_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
+		if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_widget_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
 
-					$product_name  = apply_filters( 'woocommerce_cart_item_name', $_product->get_title(), $cart_item, $cart_item_key );
-					$thumbnail     = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
-					$product_price = apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
+			$product_name  = apply_filters( 'woocommerce_cart_item_name', $_product->get_title(), $cart_item, $cart_item_key );
+			$thumbnail     = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
+			$product_price = apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
 
-					?>
-					<li>
-						<div class="row">
-						
-						<a href="<?php echo get_permalink( $product_id ); ?>">
-							
-							<span class="col-xs-9">
-								<?php echo $product_name; ?>
-<?php echo WC()->cart->get_item_data( $cart_item ); ?>
-							</span>
-							<span class="col-xs-3 product-thumbnail"><?php echo $thumbnail; ?></span>
+			?>
+			<li>
+				<div class="row">
+					
+
+						<div class="col-xs-9">
+							<a href="<?php echo get_permalink( $product_id ); ?>">
+							<?php echo $product_name; ?>
 						</a>
+							
+							<p><?php echo WC()->cart->get_item_data( $cart_item ); ?><?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf( '%s &times; %s', $cart_item['quantity'], $product_price ) . '</span>', $cart_item, $cart_item_key ); ?>
+							</p>
 						</div>
-						<div class="row">
-							<div class="col-xs-12">
-						<?php echo apply_filters( 'woocommerce_widget_cart_item_quantity', '<span class="quantity">' . sprintf( '%s &times; %s', $cart_item['quantity'], $product_price ) . '</span>', $cart_item, $cart_item_key ); ?>
-						</div>	
-						</div>
-					</li>
-					<?php
-				}
-			}
-		?>
 
-	<?php else : ?>
+						<div class="col-xs-3 product-thumbnail">
+							<a href="<?php echo get_permalink( $product_id ); ?>">
+								<?php echo $thumbnail; ?>
+							</a>
+							</div>
+				</div>
+			</li>
+			<?php
+		}
+	}
+	?>
 
-		<li class="empty"><?php _e( 'No products in the cart.', 'woocommerce' ); ?></li>
+<?php else : ?>
 
-	<?php endif; ?>
+	<li class="empty"><?php _e( 'No products in the cart.', 'woocommerce' ); ?></li>
+
+<?php endif; ?>
 
 </ul><!-- end product list -->
 
