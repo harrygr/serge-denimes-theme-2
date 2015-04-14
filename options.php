@@ -61,9 +61,23 @@ function optionsframework_options() {
 
 	$options = array();
 
+	$options[] = [
+		'name' => 'Site Settings',
+		'type' => 'heading'
+	];
+
+	$options[] = array(
+		'name' => 'Custom footer code',
+		'desc' => 'Add any custom code to appear at the bottom of the page. E.g. scripts etc',
+		'id' => 'footer_scripts',
+		'std' => '',
+		'type' => 'textarea'
+	);
+
 	$options[] = array(
 		'name' => __('Home Page Settings', 'options_check'),
-		'type' => 'heading');
+		'type' => 'heading'
+		);
 
 	// Tile 1A
 	$options[] = array(
