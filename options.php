@@ -67,11 +67,20 @@ function optionsframework_options() {
 	];
 
 	$options[] = array(
-		'name' => 'Custom footer code',
-		'desc' => 'Add any custom code to appear at the bottom of the page. E.g. scripts etc',
+		'name' => 'Custom footer scripts',
+		'desc' => 'Add any custom scripts to appear at the bottom of the page. These will appear wrapped in script tags so no need to add your own.',
 		'id' => 'footer_scripts',
 		'std' => '',
 		'type' => 'textarea'
+	);
+	
+	$options[] = array(
+		'name' => 'Custom footer html',
+		'desc' => 'Add any custom html. You cannot enter scripts here.',
+		'id' => 'footer_html',
+		'std' => '',
+		'type' => 'editor',
+		'settings' => $wp_editor_settings
 	);
 
 	$options[] = array(
@@ -279,7 +288,7 @@ function optionsframework_options() {
 		'type' => 'heading');
 
 	$wp_editor_settings = array(
-		'wpautop' => true, // Default
+		'wpautop' => false,
 		'textarea_rows' => 5,
 		'tinymce' => false,
 		);
