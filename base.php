@@ -36,7 +36,8 @@
   </div><!-- /.wrap -->
 
   <?php get_template_part('templates/footer'); ?>
-
-  <?php if ($footer_scripts = of_get_option('footer_code', false)) echo "<script>$footer_scripts</script>"; ?>
+  
+  <?php if ($footer_html = of_get_option('footer_html', false)) echo $footer_html; ?>
+  <?php if ($footer_scripts = of_get_option('footer_scripts', false)) echo "<script>$footer_scripts</script>"; ?>
 </body>
 </html>
